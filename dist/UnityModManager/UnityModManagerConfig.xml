@@ -7,9 +7,7 @@
 		<ModsDirectory>Mods</ModsDirectory>
 		<ModInfo>Info.json</ModInfo>
 		<GameExe>LoversInADangerousSpacetime.exe</GameExe>
-		<EntryPoint>[UnityEngine.UIModule.dll]UnityEngine.Canvas.cctor:Before</EntryPoint>
-		<StartingPoint>[Assembly-CSharp.dll]App.Awake:After</StartingPoint>
-		<UIStartingPoint>[Assembly-CSharp.dll]MainMenu.Start:After</UIStartingPoint>
-		<GameVersionPoint>[Assembly-CSharp.dll]Version.GetString</GameVersionPoint>
+		<EntryPoint>[UnityEngine.dll]UnityEngine.Canvas.cctor:Before</EntryPoint>
+		<StartingPoint>[Assembly-CSharp.dll]GameManager.Awake:After</StartingPoint>
 	</GameInfo>
 </Config>
