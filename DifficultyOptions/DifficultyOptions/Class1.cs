@@ -17,9 +17,32 @@ namespace DifficultyOptions
             harmony.PatchAll(Assembly.GetExecutingAssembly());
 
             mod = modEntry;
-            // HarmonyInstance.DEBUG = true;
+            mod.OnUpdate = OnUpdate;
 
+           // HarmonyInstance.DEBUG = true;
             return true;
         }
+
+        static void OnUpdate(UnityModManager.ModEntry modEntry, float dt)
+        {
+            if(Input.GetKeyDown(KeyCode.F1))
+            {
+                FileLog.Log("F1 Press");
+                HealthAndDamageNew component = GameObject.FindWithTag("Ship").GetComponent<HealthAndDamageNew>();
+                component.health = component.initialHealth;
+            }
+        }
     }
+
+    /*
+    [HarmonyPatch(typeof(WindowStack))] // Class
+    [HarmonyPatch("Add")]               // Method
+    static class Patch01
+    {
+        static void Prefix(Window window)
+        {
+
+        }
+    }
+    */
 }
