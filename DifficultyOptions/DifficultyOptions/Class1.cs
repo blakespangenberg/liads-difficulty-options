@@ -32,15 +32,20 @@ namespace DifficultyOptions
         }
     }
 
-    /*
-    [HarmonyPatch(typeof(WindowStack))] // Class
-    [HarmonyPatch("Add")]               // Method
-    static class Patch01
+    [HarmonyPatch(typeof(ShipHitSphere))] // Class
+    [HarmonyPatch("processCollision")]    // Method
+    static class SkipMacGuffinHealth
     {
-        static void Prefix(Window window)
+        static bool Prefix(GameObject other)
         {
+            if(other.CompareTag("MacGuffin"))
+            {
+                GameObject.FindWithTag("CampaignLevel").GetComponent<CampaignLevelController>().MacGuffinAcquired();
+                other.GetComponent<PowerupController>().Poof();
+                return false; // don't run the original
+            }
 
+            return true; // run the original
         }
     }
-    */
 }
