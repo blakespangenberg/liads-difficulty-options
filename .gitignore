@@ -62,3 +62,7 @@ sysinfo.txt
 crashlytics-build.properties
 
 dist/UnityModManager/Log.txt
+
+# Additional
+DifficultyOptions/DifficultyOptions/bin/*
+DifficultyOptions/DifficultyOptions/Obj/*
