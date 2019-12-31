@@ -18,8 +18,6 @@ namespace DifficultyOptions
 
             mod = modEntry;
             mod.OnUpdate = OnUpdate;
-
-           // HarmonyInstance.DEBUG = true;
             return true;
         }
 
@@ -27,7 +25,7 @@ namespace DifficultyOptions
         {
             if(Input.GetKeyDown(KeyCode.F1))
             {
-                FileLog.Log("F1 Press");
+                FileLog.Log("Restored health");
                 HealthAndDamageNew component = GameObject.FindWithTag("Ship").GetComponent<HealthAndDamageNew>();
                 component.health = component.initialHealth;
             }
